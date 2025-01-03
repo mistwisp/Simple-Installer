@@ -1,0 +1,23 @@
+﻿<Window x:Class="Simple_Installer.Message"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        AllowsTransparency="True"
+        OpacityMask="White" 
+        WindowStyle="None" 
+        Background="Transparent"
+        WindowStartupLocation="CenterScreen"
+        Title="Message" Height="600" Width="800" ResizeMode="NoResize">
+    <Grid>
+        <Image HorizontalAlignment="Center" VerticalAlignment="Center" Source="/images/bg_2.png"/>
+        <Image Height="12" Width="12" Source="/images/close_btn.png" x:Name="cl" RenderTransformOrigin="-1.667,-7.97" Margin="559,210,229,378" />
+        <TextBlock TextAlignment="Center" HorizontalAlignment="Left" Margin="222,0,0,0" TextWrapping="Wrap" Text="Instalation completed successfully!" VerticalAlignment="Center" Name="ConfigMsg" Foreground="#cccccc" Width="352" FontSize="10pt" Height="72" Opacity="0.4"/>
+        <TextBlock TextAlignment="Left" Text="Simple Installer" Foreground="#cccccc"  Opacity="0.4" Margin="231,208,235,374" x:Name="TitleText"/>
+        <Button Content="clb" Opacity="0" Width="12" Height="12" Click="ClickMessage" x:Name="btnclose" RenderTransformOrigin="-1.667,-7.97" Margin="559,210,229,378" Cursor="Hand" />
+        <Button IsEnabled="True" HorizontalAlignment="Center" Margin="0,300,0,0" VerticalAlignment="Top" Width="218" Height="58" Name="cli" Click="ClickMessage" Style="{StaticResource Button}">
+            <TextBlock Text="OK" FontSize="13pt" Name="ButtonResolve" FontWeight="Black"/>
+        </Button>
+    </Grid>
+</Window>

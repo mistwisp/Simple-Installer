@@ -1,0 +1,25 @@
+﻿<Window x:Class="Simple_Installer.Installer"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:gif="https://github.com/XamlAnimatedGif/XamlAnimatedGif"
+        AllowsTransparency="True"
+        OpacityMask="White" 
+        WindowStyle="None" 
+        Background="Transparent"
+        WindowStartupLocation="CenterScreen"
+        Title="Launcher" Height="600" Width="800" ResizeMode="NoResize">
+    <Grid RenderTransformOrigin="0.529,0.455">
+        <Image HorizontalAlignment="Center" Height="600" Width="800" VerticalAlignment="Center" Source="/images/bg.png"/>
+        <TextBlock TextAlignment="Left" Text="Simple Installer" Foreground="#cccccc"  Opacity="0.4" Margin="8,10,645,572" x:Name="titlebar"/>
+        <Image Name="LogoImg" HorizontalAlignment="Center" Height="238" VerticalAlignment="Top" Width="218" Source="/images/logo.png" x:FieldModifier="public" Margin="0,342,0,0"/>
+        <TextBlock Text="Installing at " Foreground="#cccccc" Margin="257,499,257,82" Name="unitText" FontSize="8pt" TextAlignment="center" Opacity="0"/>
+        <TextBlock Text=" C:\Arquivos de Programas\Orion Ascension" Foreground="#ef2d2d" Margin="114,513,114,68" Name="unitFolder" FontSize="8pt" TextAlignment="center" Opacity="0"/>
+        <ProgressBar HorizontalAlignment="Center" Height="24" Margin="0,541,0,0" VerticalAlignment="Top" Width="572" x:Name="InstallBarFiles" BorderBrush="{x:Null}" Value="20" Style="{StaticResource Bar}" Opacity="0"/>
+        <TextBlock Text="0%" Foreground="#cccccc" Margin="114,544,114,38" Name="unitValue" FontSize="8pt" TextAlignment="center" Opacity="0"/>
+        <Button IsEnabled="True" HorizontalAlignment="Center" Margin="0,516,0,0" VerticalAlignment="Top" Width="218" Height="58" Name="cli" Click="SelectFolder" Style="{StaticResource Button}" Opacity="1">
+            <TextBlock Text="SELECIONAR PASTA" FontSize="12pt" Name="ButtonResolve" FontWeight="Black"/>
+        </Button>
+        <Image Height="12" Width="12" Source="/images/close_btn.png" x:Name="cl" RenderTransformOrigin="-1.667,-7.97" Margin="777,13,11,575" />
+        <Button Content="clb" Opacity="0" Width="12" Height="12" Click="ClickClose" x:Name="clb" RenderTransformOrigin="-1.667,-7.97" Margin="777,13,11,575" Cursor="Hand" />
+    </Grid>
+</Window>
