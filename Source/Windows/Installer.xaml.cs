@@ -13,14 +13,27 @@ namespace Simple_Installer
         public string folderPath = "";
         public Config config = new Config();
         public Message MessageWindow { get; set; }
+        private CancellationTokenSource cts = new CancellationTokenSource();
         public Installer()
         {
             InitializeComponent();
             Show();
         }
-        private void ClickClose(object sender, RoutedEventArgs e)
-        {
-            Close();
+        private void ClickClose(object sender, RoutedEventArgs e) 
+        { 
+            try 
+            { 
+                cts.Cancel(); 
+                foreach (Window window in System.Windows.Application.Current.Windows) 
+                { 
+                    window.Close(); 
+                } 
+                System.Windows.Application.Current.Shutdown(); 
+            } 
+            catch (Exception ex) 
+            { 
+                Debug.WriteLine($"Shutdown error: {ex.Message}");
+            } 
         }
         private void SelectFolder(object sender, RoutedEventArgs e)
         {
