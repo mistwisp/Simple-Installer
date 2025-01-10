@@ -12,30 +12,30 @@ namespace Simple_Installer
             var principal = new System.Security.Principal.WindowsPrincipal(identity);
             return principal.IsInRole(System.Security.Principal.WindowsBuiltInRole.Administrator);
         }
-        void AppMain(object sender, StartupEventArgs e)
-        {
-            if (!IsRunAsAdministrator())
-            {
-                ProcessStartInfo processInfo = new ProcessStartInfo
-                {
-                    UseShellExecute = true,
+        void AppMain(object sender, StartupEventArgs e) 
+        { 
+            if (!IsRunAsAdministrator()) 
+            { 
+                ProcessStartInfo processInfo = new ProcessStartInfo 
+                { 
+                    UseShellExecute = true, 
                     FileName = Environment.GetCommandLineArgs()[0],
-                    Verb = "runas"
-                };
-                try
-                {
-                    Process.Start(processInfo);
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine("Error: " + ex.Message);
-                }
-                return;
-            }
-            else
-            {
-                _ = new Installer();
-            }
+                    Verb = "runas" 
+                }; 
+                try 
+                { 
+                    Process.Start(processInfo); 
+                } 
+                catch (Exception ex) 
+                { 
+                    Console.WriteLine("Error: " + ex.Message); 
+                } 
+                Shutdown(); 
+            } 
+            else 
+            { 
+                new Installer().Show(); 
+            } 
         }
     }
 }
