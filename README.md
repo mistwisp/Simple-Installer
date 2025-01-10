@@ -13,4 +13,4 @@
 9. Profit(?);
 
 # Known Issues
-- It keeps running in the background after it is closed, even if the installation is complete;
+- You tell me <3
